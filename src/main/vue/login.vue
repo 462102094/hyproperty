@@ -12,10 +12,7 @@
     </form>
     <!--登录form表单结束  -->
     <!--微信登录文字加图标开始  -->
-    <div id="d2">
-        <img id="i2" alt="" src="../../icon/i_wechat.png">
-        <span>微信登录</span>
-    </div>
+    <a class="wechat" href="">微信登录</a>
     <!--微信登录文字加图标结束  -->
   </div>
 </template>
@@ -31,8 +28,6 @@ export default {
     width: 100%;
     height: 100%;
     position: fixed;
-    background: url("../../img/login.png") no-repeat center center;
-    background-size: 100% 100%;
     overflow: hidden;
   }
   .top_img{
@@ -79,5 +74,16 @@ export default {
     text-align: right;
   }
   /*-----*/
-
+  .wechat{
+    display: block;
+    width: 3rem;
+    padding-top: 3.2rem;
+    margin: 2.6rem auto;
+    text-decoration: none;
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+    background: url("../../icon/i_wechat.png") no-repeat center top;
+    background-size: 100% auto;
+  }
 </style>
