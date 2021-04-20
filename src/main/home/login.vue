@@ -4,23 +4,36 @@
       <img alt="" src="../../img/login_img.jpg">
     </div>
     <h3 class="head">用户登录</h3>
-    <form class="form" action="" method="post">
-      <input type="text" name="username" placeholder="用户名/手机号码"><br>
-      <input type="password" name="password" placeholder="密码"><br>
-      <input id="login_btn" type="submit" value="登录">
-      <div class="forget_pass"><a href="">忘记密码</a></div>
+    <form class="form" id="form" action="" method="post">
+      <input type="text" v-model="name" placeholder="用户名/手机号码" tips="请输入用户名"><br>
+      <input type="password" v-model="password" placeholder="密码" tips="请输入正确的密码"><br>
+      <input id="login_btn" type="button" value="登录" v-on:click="click">
+<!--      <button id="login_btn">登录</button>-->
+      <div class="forget_pass"><a href="javascript:">忘记密码</a></div>
     </form>
-    <!--登录form表单结束  -->
-    <!--微信登录文字加图标开始  -->
-    <a class="wechat" href="">微信登录</a>
-    <!--微信登录文字加图标结束  -->
+    <a class="wechat" href="javascript:">微信登录</a>
   </div>
 </template>
 
 <script>
-export default {
-  name: "login"
-}
+  import login from "../../js/login"
+  export default {
+    name: "login",
+    el:"form",
+    data:{
+      name:"",
+      password:"",
+    },
+    methods:{
+      click:function (){
+        var obj={
+          name:this.name,
+          password:this.password
+        };
+
+      }
+    }
+  }
 </script>
 
 <style scoped>
@@ -33,7 +46,6 @@ export default {
   .top_img{
     width: 100%;
     height: 14.5rem;
-    background-color: red;
     position: relative;
   }
   .top_img img {
