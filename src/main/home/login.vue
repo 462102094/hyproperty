@@ -19,7 +19,7 @@
   import login from "../../js/login"
   export default {
     name: "login",
-    el:"form",
+    el:"#form",
     data:{
       name:"",
       password:"",
